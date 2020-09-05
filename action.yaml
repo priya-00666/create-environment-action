@@ -1,0 +1,35 @@
+name: "Create Cloudify Environment"
+description: "Creates an environment by uploading a blueprint and creating a deployment"
+inputs:
+  environment-name:
+    description: "The ID of the environment"
+    required: true
+  blueprint:
+    description: "Path to the blueprint"
+    required: true
+  inputs-file:
+    description: "Path to inputs file"
+    required: false
+    default: "-"
+  outputs-file:
+    description: "Path to generated outputs file"
+    required: false
+    default: "-"
+outputs:
+  environment-data:
+    description: "The environment's outputs"
+runs:
+  using: "docker"
+  image: "docker://isaaccfy/cfy-ci:latest"
+  entrypoint: "cfyci"
+  args:
+    - 'create-environment'
+    - '--init'
+    - '--name'
+    - ${{ inputs.environment-name }}
+    - '--blueprint'
+    - ${{ inputs.blueprint }}
+    - '--inputs'
+    - ${{ inputs.inputs-file }}
+    - '--outputs'
+    - ${{ inputs.outputs-file }}
