@@ -35,7 +35,7 @@ runs:
     - ${{ inputs.environment-name }}
     - '--blueprint'
     - ${{ inputs.blueprint }}
-    - '--inputs'
+    - '--inputs-file'
     - ${{ inputs.inputs-file }}
     - '--outputs-file'
     - ${{ inputs.outputs-file }}
