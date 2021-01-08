@@ -23,7 +23,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create environment
-        uses: cloudify-cosmo/create-environment-action@v1.0
+        uses: cloudify-cosmo/create-environment-action@v1.1
         with:
           environment-name: "test-simple-$GITHUB_RUN_ID"
           blueprint: simple/blueprint.yaml
