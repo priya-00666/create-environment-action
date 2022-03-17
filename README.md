@@ -23,15 +23,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create environment
-        uses: cloudify-cosmo/create-environment-action@v1.1
+        uses: cloudify-cosmo/create-environment-action@v1.2
         with:
           environment-name: "test-simple-$GITHUB_RUN_ID"
+          labels: some_label:label_value,yet_another_label:some_value
           blueprint: simple/blueprint.yaml
           outputs-file: env-data.json
 ```
 
 The blueprint file is taken from the repository that was checked out during the "Checkout code" step.
- 
+
 # More Information
 
 Refer to [Cloudify CI/CD Integration](https://docs.cloudify.co/latest/working_with/integration/) for additional information about
