@@ -23,7 +23,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create environment
-        uses: cloudify-cosmo/create-environment-action@v1.2
+        uses: cloudify-cosmo/create-environment-action@v1.3
         with:
           environment-name: "test-simple-$GITHUB_RUN_ID"
           labels: some_label:label_value,yet_another_label:some_value
